@@ -11,8 +11,8 @@
 6. npm run dev했다가 ctrl + c로 끄기(테이블 생성)
 7. npx sequelize db:seed:all(기초 데이터 넣기)
 8. npm run dev
-9. localhost:3095에서 서버 돌아가는 중
-10. 백엔드 개발자가 API.md와 typings/db.ts를 남겨둔 상황
+9. localhost:3095에서 서버 돌아가는 중 <--여기까지 완료
+10. 백엔드 개발자가 API.md와 typings/db.ts를 남겨둔 상황  
 
 # 강좌 순서
 ## 1일차
