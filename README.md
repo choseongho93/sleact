@@ -18,7 +18,7 @@
 ## 1일차 
 1. package.json
   - npm init으로 생성
-  - npm i react react-dom
+  - `npm i react react-dom`
   - npm i typescript @types/react @types/react-dom
   - 설치 후 package-lock.json과 node_modules 폴더가 생성됨
 2. .eslintrc
