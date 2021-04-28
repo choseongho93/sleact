@@ -11,30 +11,30 @@
 6. npm run dev했다가 ctrl + c로 끄기(테이블 생성)
 7. npx sequelize db:seed:all(기초 데이터 넣기)
 8. npm run dev
-9. localhost:3095에서 서버 돌아가는 중 <--여기까지 완료
+9. localhost:3095에서 서버 돌아가는 중
 10. 백엔드 개발자가 API.md와 typings/db.ts를 남겨둔 상황  
 
 # 강좌 순서
-## 1일차
+## 1일차 
 1. package.json
   - npm init으로 생성
   - npm i react react-dom
   - npm i typescript @types/react @types/react-dom
   - 설치 후 package-lock.json과 node_modules 폴더가 생성됨
 2. .eslintrc
-  - eslint 설정 파일
+  - eslint 설정 파일 < 코드 검사 도구 (.eslintrc)
   - 코드 점검 도구, 직접 설정하면 팀원간 의견 충돌이 있으니 prettier에 위임
   - npm i -D eslint
 3. .prettierrc
-  - prettier 설정 파일
+  - prettier 설정 파일 <- 코드 검사 도구 (.eslintrc)
   - 저장하면 알아서 코드를 수정해줌(에디터 설정 필요)
   - npm i -D prettier eslint-plugin-prettier eslint-config-prettier
-4. tsconfig.json
+4. tsconfig.json 
   - 타입스크립트 설정
   - 언어 문법과 자바스크립트 결과물이 어떻게 나와야하는지 설정하는 파일
   - lib은 ES2020, DOM(브라우저), module은 esnext처럼 최신 설정이지만 target은 es5로 IE 브라우저에서도 돌아갈 수 있게 변환
   - strict: true를 켜놓아야 타입 체킹을 해줘서 의미가 있음.
-5. webpack.config.ts
+5. webpack.config.ts 
   - 웹팩 설정
   - ts, css, json, 최신 문법 js 파일들을 하나로 합쳐줌.
   - npm i -D webpack @types/webpack @types/node
@@ -43,10 +43,11 @@
   - babel에서는 @babel/preset-env(최신문법 변환) @babel/preset-react(리액트 jsx 변환), @babel/preset-typescript(타입스크립트 변환)
   - npm i -D css-loader style-loader @babel/core babel-loader @babel/preset-env @babel/preset-react @babel/preset-typescript
   - publicPath가 /dist/고 [name].js에서 [name]이 entry에 적힌대로 app으로 바뀌어 /dist/app.js가 결과물이 됨.
-6. index.html 작성
+6. index.html 작성  <--여기까지 완료
   - 아이콘, 폰트, 파비콘같은 것은 슬랙에서 그대로 사용
   - client.tsx에 간단한 tsx 작성
   - #app 태그에 리액트가 렌더링됨.
+  - npx webpack
   - ./dist/app.js로 웹팩이 만들어낸 js파일 불러옴
 7. tsconfig-for-webpack-config.json
   - webpack할 때 webpack.config.ts를 인식 못하는 문제
