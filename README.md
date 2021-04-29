@@ -54,17 +54,17 @@
   - npm i cross-env
   - package.json의 scripts의 build를 cross-env `TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack`
   - `npm run build`
-  - index.html 실행해보기 <------------------------------------------------- 여기까지 완료
+  - index.html 실행해보기 
 8. 웹팩 데브 서버 설치
   - 개발용 서버인 devServer 옵션 추가(port는 3090, publicPath는 /dist/로)
   - webpack serve할 때 webpack.config.ts를 인식 못하는 문제
-  - npm i -D ts-node webpack-dev-server @types/webpack-dev-server webpack-cli
+  - `npm i -D ts-node webpack-dev-server @types/webpack-dev-server webpack-cli`
   - package.json의 scripts의 dev를 cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack serve --env development
   - npm run dev하면 localhost:3090에서 서버 실행됨.
 9. hot reloading 설정
-  - npm i -D @pmmmwh/react-refresh-webpack-plugin react-refresh
+  - `npm i -D @pmmmwh/react-refresh-webpack-plugin react-refresh`
   - webpack의 babel-loader 안에 설정(env) 및 plugin으로 추가
-10. fork-ts-checker-webpack-plugin
+10. `fork-ts-checker-webpack-plugin`
 - webpack은 ts체크 후 eslint체크 후 빌드 시작
 - ts랑 eslint는 동시에 체크하면 더 효율적
 - 이 플러그인이 동시에 진행하게 해줌.
@@ -75,27 +75,29 @@
   - 커스텀훅은 hooks, 기타 함수는 utils 
   - 각 컴포넌트는 컴포넌트 폴더 아래 index.tsx(JSX)와 styles.tsx(스타일링)
 12. ts와 webpack에서 alias 지정
-  - npm i -D tsconfig-paths
+  - `npm i -D tsconfig-paths`
   - tsconfig에서 baseUrl와 paths 설정
   - webpack에서는 resolve안에 alias 설정
   - ../layouts/App같은 것을 @layouts/App으로 접근 가능
 13. emotion 세팅
   - styled components와 비슷하지만 설정이 간단함.
-  - npm i @emotion/react @emotion/styled
-  - npm i -D @emotion/babel-plugin (웹팩에 babel 설정 추가)
+  - `npm i @emotion/react @emotion/styled`
+  - `npm i -D @emotion/babel-plugin` (웹팩에 babel 설정 추가)
   - 스타일드 컴포넌트로 만들 때 변수를 많이 만드는 셈이므로 & 같은 선택자 적극 활용해야 변수 이름짓기를 최소화할 수 있음.
 14. @layouts/App 작성
   - 리액트 라우터 적용하기
-  - npm i react-router react-router-dom
-  - npm i -D @types/react-router @types/react-router-dom
+  - `npm i react-router react-router-dom`
+  - `npm i -D @types/react-router @types/react-router-dom`
   - client.tsx에서 App을 BrowserRouter로 감싸기
   - @layouts/App에 Switch, Redirect, Route 넣기
 15. @loadable/component
 - 라우터를 코드스플리팅 해줌
 - 회원가입 페이지에 접근한 사람은 회원가입 페이지에 필요한 JS만 받음
 - 3초 룰 기억하자!
-- npm i @loadable/component @types/loadable__component
+- `npm i @loadable/component @types/loadable__component`
 16. @pages/SignUp 작성
+
+<------------------------------------------------- 여기까지 완료
 
 ## 2일차
 17. 회원가입 axios로 진행

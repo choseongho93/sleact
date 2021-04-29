@@ -1,14 +1,14 @@
-// import React from 'react';
-// import { render } from 'react-dom';
-// import { BrowserRouter } from 'react-router-dom';
-// import App from '@layouts/App';
+import React from 'react';
+import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import App from '@layouts/App/index';
 
-// render(
-//   <BrowserRouter>
-//     <App />
-//   </BrowserRouter>,
-//   document.querySelector('#app'),
-// );
+render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.querySelector('#app'),
+);
 
 // pages - 서비스 페이지
 // components - 짜잘 컴포넌트
@@ -17,15 +17,15 @@
 //------------------------------------------------
 
 
-import React from 'react';
-import { render } from 'react-dom';
-// import { BrowserRouter } from 'react-router-dom';
-import App from './layouts/App';
+// import React from 'react';
+// import { render } from 'react-dom';
+// // import { BrowserRouter } from 'react-router-dom';
+// import App from '@layouts/App';
 
-render(
-    <App />,
-  document.querySelector('#app'),
-);
+// render(
+//     <App />,
+//   document.querySelector('#app'),
+// );
 
 // pages - 서비스 페이지
 // components - 짜잘 컴포넌트
