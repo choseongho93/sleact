@@ -97,8 +97,6 @@
 - `npm i @loadable/component @types/loadable__component`
 16. @pages/SignUp 작성
 
-<------------------------------------------------- 여기까지 완료
-
 ## 2일차
 17. 회원가입 axios로 진행
   - npm i axios
@@ -111,7 +109,7 @@
   - 훅 내부에 훅을 작성할 수 있는 유일한 케이스
   - useCallback은 return 안에 들어있는 함수에 꼭 적용해주자
   - useMemo는 return 안에 들어있는 값에 적용하자
-19. @pages/LogIn 작성 및 SWR
+19. @pages/LogIn 작성 및 SWR <------------------------------------------------- 여기까지 완료
   - 로그인 한 사람이 회원가입/로그인 페이지에 접근한다면?
   - GET 요청은 SWR로 하는 것도 괜찮음
   - npm i swr

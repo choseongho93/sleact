@@ -78,7 +78,10 @@ const config: webpack.Configuration = {
     publicPath: '/dist/',
     proxy: {
       '/api/': {
-        target: 'http://localhost:3095',
+        target: 'http://localhost:3095', 
+        // 둘다 로컬호스트일때만 가능~~~~~~
+        // 같은 로컬끼리 통신이 안되기때문에 프론트에서 설정하는 방법2   // 방법1은 백엔드에서 설정 필요.
+        // 현재 3090이 프론트서버이고, 3095가 백엔드 서버인데 기존에는 axios통신할때 3090->3095로 통신하는 반면에 이렇게 적으면 3095->3095로 통신하는것이 됨.
         changeOrigin: true,
       },
     },

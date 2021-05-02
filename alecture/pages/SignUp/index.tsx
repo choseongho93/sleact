@@ -1,8 +1,8 @@
 import useInput from '@hooks/useInput';
 import fetcher from '@utils/fetcher';
 import React, { useCallback, useState, VFC } from 'react';
-import axios from 'axios';
-import useSWR from 'swr';
+import axios from 'axios'; // 서버에 비동기 처리
+import useSWR from 'swr';  // 전역으로 로그인된 유저 정보를 session처럼 가지고있음.
 import { Success, Form, Error, Label, Input, LinkContainer, Button, Header } from './styles';
 import { Link, Redirect } from 'react-router-dom';
 
@@ -48,15 +48,15 @@ const SignUp = () => {
             nickname,
             password,
           })
-          .then((response) => {
+          .then((response) => { // 성공
             console.log(response);
             setSignUpSuccess(true);
           })
-          .catch((error) => {
+          .catch((error) => { // 실패
             console.log(error.response);
             setSignUpError(error.response.data);
           })
-          .finally(() => {});
+          .finally(() => {}); // 성공, 실패 모두 실행 
       }
     },
     [email, nickname, password, passwordCheck, mismatchError],
@@ -66,7 +66,7 @@ const SignUp = () => {
     return <div>로딩중...</div>;
   }
 
-  if (data) {
+  if (data) { // 내정보가 있다면 리다이렉트  const { data, error, revalidate } = useSWR('/api/users', fetcher);
     return <Redirect to="/workspace/sleact/channel/일반" />;
   }
 
@@ -106,7 +106,7 @@ const SignUp = () => {
       </Form>
       <LinkContainer>
         이미 회원이신가요?&nbsp;
-        <Link to="/login">로그인 하러가기</Link>
+        <Link to="/login">로그인 하러가기</Link> 
       </LinkContainer>
     </div>
   );
