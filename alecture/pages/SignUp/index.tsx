@@ -9,7 +9,7 @@ import { Link, Redirect } from 'react-router-dom';
 const SignUp = () => {
   const { data, error, revalidate } = useSWR('/api/users', fetcher);
 
-  const [email, onChangeEmail] = useInput('');
+  const [email, onChangeEmail, ] = useInput('');
   const [nickname, onChangeNickname] = useInput('');
   const [password, , setPassword] = useInput('');
   const [passwordCheck, , setPasswordCheck] = useInput('');
@@ -33,6 +33,8 @@ const SignUp = () => {
     [password],
   );
 
+    // useCallback은 email, nickname, password, passwordCheck, mismatchError 이값들이 하나라도 바뀔떄까지 캐시해놓는것!
+    // 만약 위 5개중 하나라도 값이 바뀌면 useCallback 함수를 새로 시작함.
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
@@ -93,13 +95,7 @@ const SignUp = () => {
         <Label id="password-check-label">
           <span>비밀번호 확인</span>
           <div>
-            <Input
-              type="password"
-              id="password-check"
-              name="password-check"
-              value={passwordCheck}
-              onChange={onChangePasswordCheck}
-            />
+            <Input type="password" id="password-check" name="password-check" value={passwordCheck} onChange={onChangePasswordCheck} />
           </div>
           {mismatchError && <Error>비밀번호가 일치하지 않습니다.</Error>}
           {!nickname && <Error>닉네임을 입력해주세요.</Error>}

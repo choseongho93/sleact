@@ -12,6 +12,7 @@ const LogIn = () => {
   const [logInError, setLogInError] = useState(false);
   const [email, onChangeEmail] = useInput('');
   const [password, onChangePassword] = useInput('');
+
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
